@@ -12,19 +12,24 @@
 
 <body>
   <div id="app">
-    <nav class="menu">
+    <nav class="menu" data-show="false">
       <div class="menu-brand">
         <a href="#0">Mobile</a>
       </div>
       <div class="menu-links">
-        <a href="#0">Home</a>
-        <a href="#0">Work</a>
-        <a href="#0">About</a>
-        <a href="#0">Contact</a>
+        <div class="container">
+          <a href="#0">_Home</a>
+          <a href="#0">_Work</a>
+          <a href="#0">_About</a>
+          <a href="#0">_Contact</a>
+        </div>
       </div>
       <button class="menu-toggle">
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined" data-icon="menu">
           menu
+        </span>
+        <span class="material-symbols-outlined" data-icon="close">
+          close
         </span>
       </button>
     </nav>
