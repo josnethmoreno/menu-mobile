@@ -38,26 +38,53 @@ body {
 }
 
 .menu-links {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  font-size: 4rem;
+  color: var(--secondary);
+  visibility: hidden;
+}
+
+.menu-links > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-links a{
+  transform: translateX(50px);
+  position: relative;
+  opacity: 0;
+  transition: 1s ease;
+  filter: blur(10px);
+  visibility: hidden;
+}
+
+.menu-bg {
   position: absolute;
   right: 2.6rem;
   top: 2.6rem;
-  height: 10px;
-  width: 10px;
+  width: 0;
+  height: 0;
   color: var(--secondary);
   background-color: var(--accent);
   font-size: 4rem;
-  clip-path: circle(50% at 100%, 100%);
-  transition: .3s;
+  clip-path: circle(50% at 50% 50%);
+  transition: .6s ease;
+  pointer-events: none;
 }
 
-.menu-links .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  max-width: 1220px;
-  margin: 0 auto;
-  height: 100%;
+.menu-bg-lg {
+  position: fixed;
+  top: 0;
+  right: -500vh;
+  width: 200vw;
+  height: 100vh;
+  background-color: var(--accent);
 }
 
 .menu-toggle {
@@ -68,9 +95,17 @@ body {
   display: none;
 }
 
-.menu[data-show="true"] .menu-links{
-  width: 100vh;
-  height: 100vh;
+.menu[data-show="true"] .menu-links {
+  left: 0;
+  visibility: visible;
+}
+
+.menu[data-show="true"] .menu-links a{
+  opacity: 1;
+  transition: 1s var(--appear) ease;
+  filter: blur(0);
+  transform: translateX(0);
+  visibility: visible;
 }
 
 .menu[data-show="true"] .menu-toggle span[data-icon="close"] {
@@ -79,6 +114,18 @@ body {
 
 .menu[data-show="true"] .menu-toggle span[data-icon="menu"] {
   display: none;
+}
+
+.menu[data-show="true"] .menu-bg{
+  right: -100vh;
+  top: -100vh;
+  width: 400vh;
+  height: 400vh;
+}
+
+.menu[data-show="true"] .menu-bg-lg{
+  transform: translateX(-500vh);
+  transition: .6s .6s;
 }
 
 .home {
@@ -107,4 +154,10 @@ body {
 
 .home figure img:hover {
   transform: scale(1.2);
+}
+
+@media (max-width: 500px) {
+  .menu-bg {
+    transition: 1s ease-in-out;
+  }
 }
