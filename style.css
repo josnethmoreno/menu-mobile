@@ -35,6 +35,7 @@ body {
 	margin: 0 auto;
 	padding: 0rem 2rem;
 	height: var(--header-h);
+	z-index: 10;
 }
 
 .menu-brand span {
@@ -117,6 +118,7 @@ body {
 
 .menu[data-show='true'] .menu-toggle span[data-icon='close'] {
 	display: inline-block;
+	color: var(--secondary)
 }
 
 .menu[data-show='true'] .menu-toggle span[data-icon='menu'] {
@@ -137,44 +139,57 @@ body {
 }
 
 .home {
-	height: calc(100vh - var(--header-h));
-	margin: 0 auto;
-	max-width: 1220px;
-	padding: 0 2rem;
 	display: flex;
 	flex-direction: column;
-	gap: 4rem;
+	gap: 6rem;
+	padding: 0 2rem;
+	margin: 0 auto;
+	height: calc(100vh - var(--header-h));
+	max-width: 1220px;
+	overflow: hidden;
 }
 
 .home h1 {
-  display: flex;
-  flex-direction: column;
 	font-size: 4rem;
 }
 
 .home h1 span {
-	display: inline-block;
-  margin-left: auto;
 	font-weight: 400;
 }
 
 .home h1 .underscore {
-  font-style: normal;
   color: var(--accent);
+  font-style: normal;
 }
 
-.home div {
+.carousel {
 	display: flex;
-	justify-content: space-between;
+	width: 200%;
 }
 
-.home figure {
+.carousel-body {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	animation: carousel 20s linear infinite;
+}
+
+.carousel-body figure {
 	overflow: hidden;
 	border: 1px solid var(--primary);
 }
 
-.home figure img:hover {
+.carousel-body figure img:hover {
 	transform: scale(1.2);
+}
+
+@keyframes carousel{
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
 }
 
 @media (max-width: 500px) {
