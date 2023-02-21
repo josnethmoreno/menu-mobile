@@ -68,6 +68,7 @@ body {
 	filter: blur(10px);
 	opacity: 0;
 	transition: .3s ease;
+	overflow: hidden;
 }
 
 .menu-bg {
@@ -112,7 +113,6 @@ body {
 	opacity: 1;
 	transition: 1s var(--appear) ease;
 	filter: blur(0);
-	transform: translateX(0);
 	visibility: visible;
 }
 
