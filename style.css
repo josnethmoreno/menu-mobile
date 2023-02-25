@@ -16,8 +16,13 @@ body {
 	font-family: 'Space Grotesk';
 	color: var(--primary);
 	background-color: var(--secondary);
-	max-height: 100vh;
+	height: 100lvh;
 	overflow: hidden;
+	overflow-x: hidden;
+}
+
+html {
+	overflow-x: hidden;
 }
 
 .material-symbols-outlined {
@@ -196,6 +201,7 @@ body {
 .carousel-body figure {
 	overflow: hidden;
 	border: 1px solid var(--primary);
+	width: 250px;
 }
 
 .carousel-body figure img:hover {
@@ -212,7 +218,14 @@ body {
 }
 
 @media (max-width: 500px) {
+	h1 {
+		font-size: 2.8rem !important;
+	}
 	.menu-bg {
-		transition: .6s ease-in-out;
+		transition: .6s ease-out;
+	}
+
+	.menu[data-show='true'] .menu-bg {
+		transition: 1s ease-in-out;
 	}
 }
