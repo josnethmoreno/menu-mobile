@@ -71,6 +71,24 @@ body {
 	overflow: hidden;
 }
 
+.menu a span {
+	display: inline-block;
+	transition: .6s ease;
+}
+
+
+.menu a:hover span {
+	transform: translateY(-100%);
+}
+
+.menu-links a span::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 100%;
+	left: 0;
+	font-size: 4rem;
+}
+
 .menu-bg {
 	position: absolute;
 	right: 2.8rem;
@@ -111,7 +129,8 @@ body {
 
 .menu[data-show='true'] .menu-links a {
 	opacity: 1;
-	transition: 1s var(--appear) ease;
+	transform: translateX(0);
+	transition: .8s var(--appear) ease;
 	filter: blur(0);
 	visibility: visible;
 }
