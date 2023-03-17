@@ -165,7 +165,8 @@ html {
 .home {
 	display: flex;
 	flex-direction: column;
-	gap: 6rem;
+	justify-content: center;
+	gap: 10rem;
 	padding: 0 2rem;
 	margin: 0 auto;
 	height: calc(100vh - var(--header-h));
@@ -221,8 +222,9 @@ html {
 	h1 {
 		font-size: 2.8rem !important;
 	}
+
 	.menu-bg {
-		transition: .6s ease-out;
+		transition: 1s ease-out;
 	}
 
 	.menu[data-show='true'] .menu-bg {
